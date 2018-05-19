@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Check_X" sid="799239980926781" static="0" type="number">0</variable>
+        <variable constant="0" name="LastY" sid="729393544317302" static="0" type="number">0</variable>
+        <variable constant="0" name="LastX" sid="566979835244998" static="0" type="number">0</variable>
+        <variable constant="0" name="CrawfishPoints" sid="567048131510262" static="0" type="number">0</variable>
+        <event-block sid="138426397998649">
+            <conditions>
+                <condition behavior="DragDrop" id="0" name="Is dragging" sid="982957290345997" type="Crawfish" />
+                <condition id="-8" name="Compare two values" sid="853093926845271" type="System">
+                    <param id="0" name="First value">distance(LastX, LastY, Crawfish.X, Crawfish.Y)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">40</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="718413778454488" type="System">
+                    <param id="0" name="Variable">CrawfishPoints</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="543808772203140" type="System">
+                    <param id="0" name="Variable">LastX</param>
+                    <param id="1" name="Value">Crawfish.X</param>
+                </action>
+                <action id="-9" name="Set value" sid="628004159450085" type="System">
+                    <param id="0" name="Variable">LastY</param>
+                    <param id="1" name="Value">Crawfish.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="309530544671236">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="902322904992910" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="172364083398129" type="Text">
+                    <param id="0" name="Text">CrawfishPoints</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="483463067881342">
+            <conditions>
+                <condition behavior="DragDrop" id="1" name="On drag start" sid="391454055373333" type="Crawfish" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="486749979075006" type="System">
+                    <param id="0" name="Variable">LastX</param>
+                    <param id="1" name="Value">Crawfish.X</param>
+                </action>
+                <action id="-9" name="Set value" sid="346138344451376" type="System">
+                    <param id="0" name="Variable">LastY</param>
+                    <param id="1" name="Value">Crawfish.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="502341738854964">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="546010188782445" type="System">
+                    <param id="0" name="Variable">Check_X</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">Crawfish.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="550110478295786" type="Crawfish">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="185967054532121" type="System">
+                    <param id="0" name="Variable">Check_X</param>
+                    <param id="1" name="Value">Crawfish.X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878836210603169">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="685626203083931" type="System">
+                    <param id="0" name="Variable">Check_X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">Crawfish.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="528769732148101" type="Crawfish">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="808350960832738" type="System">
+                    <param id="0" name="Variable">Check_X</param>
+                    <param id="1" name="Value">Crawfish.X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="714100201314082">
+            <conditions>
+                <condition id="0" name="On clicked" sid="530805681247345" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="330004257236339" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
